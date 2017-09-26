@@ -31,5 +31,11 @@ class TestTicTacToe < Minitest::Test
 		board = ['x','2','3','4','5','6','o','8','9']
 		position = 0
 		assert_equal(false, spot_open?(board,position))
-	end
+	end 
+	def test_player
+		assert_equal("x", change_player("o"))
+	end	
+	def win
+		assert_equal("x wins", win_condition['x','x','x','4','5','6','7','8','9'])
+	end	
 end		

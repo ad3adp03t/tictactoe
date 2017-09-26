@@ -1,0 +1,10 @@
+assign player
+define board
+		check board state
+		check user input
+		is move available
+		update board
+	check end state	
+		change players
+
+
