@@ -35,7 +35,14 @@ class TestTicTacToe < Minitest::Test
 	def test_player
 		assert_equal("x", change_player("o"))
 	end	
-	def win
+	def win1
 		assert_equal("x wins", win_condition['x','x','x','4','5','6','7','8','9'])
+	end	
+	def win2
+		assert_equal("O wins", win_condition['1','2','O','4','O','6','7','8','O'])
+	end	
+	def valid_pos
+		board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+		assert_equal(false, valid_pos?("7",board))
 	end	
 end		
