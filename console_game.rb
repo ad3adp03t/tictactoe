@@ -2,6 +2,7 @@ require_relative 'board.rb'
 require_relative 'console_human.rb'
 require_relative 'sequential.rb'
 require_relative 'random.rb'
+require_relative 'impossible.rb'
 
 class ConsoleGame
 
@@ -68,6 +69,7 @@ class ConsoleGame
 			1 - Human
 			2 - Easy Computer
 			3 - Medium Computer
+			4 - Hard Computer
 			"""
 		@input1 = gets.chomp.to_i
 		
@@ -77,6 +79,8 @@ class ConsoleGame
 			@player_1 = Sequential.new('X')
 		elsif input1 == 3 
 			@player_1 = Random.new('x')
+		elsif input1 == 4 
+			@player_1 = Impossible.new('x')	
 		else
 			puts "Invalid Input"
 			get_player1
@@ -89,6 +93,7 @@ class ConsoleGame
 			1 - Human
 			2 - Easy Computer
 			3 - Medium Computer
+			4 - Hard Computer
 			"""
 		@input2 = gets.chomp.to_i
 		
@@ -98,6 +103,8 @@ class ConsoleGame
 			@player_2 = Sequential.new('O')
 		elsif input2 == 3 
 			@player_2 = Random.new('O')
+		elsif input2 == 4 
+			@player_2 = Impossible.new('O')	
 		else
 			puts "Invalid Input"
 			get_player2
