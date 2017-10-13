@@ -49,6 +49,16 @@ class TestTicTacToeImpossible < Minitest::Test
         assert_equal(0, impossible.get_move(["", "", "", "", "0", "", "", "", ""]))
     end
 
+    def test_block_func
+        impossible = Impossible.new('o')
+        assert_equal(1, impossible.get_move(["x", "", "x", "", "0", "", "", "", ""]))
+    end
+
+    def test_block_get_move
+        impossible = Impossible.new('o')
+        assert_equal(1, impossible.block(["x", "", "x", "", "0", "", "", "", ""]))
+    end
+
 
 
 

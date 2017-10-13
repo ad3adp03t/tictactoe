@@ -55,8 +55,8 @@ class Impossible
         move = 50
         if  win(ttt_board) <= 8
              move = win(ttt_board) 
-        # elsif  block(ttt_board) <= 8
-        #     move = block(ttt_board) 
+        elsif  block(ttt_board) <= 8
+            move = block(ttt_board) 
         elsif take_center(ttt_board) <= 8
             move = take_center(ttt_board)  
         elsif take_corner(ttt_board) <= 8
@@ -68,7 +68,7 @@ class Impossible
     end
 
     def win(ttt_board)
-        win_block_move(ttt_board, marker)
+        win_block_move(ttt_board, @marker)
     end
 
     def take_center(ttt_board)
@@ -91,6 +91,10 @@ class Impossible
         else 
             move = 50
         end
+    end
+
+    def block(ttt_board)
+        win_block_move(ttt_board, opponent)
     end
 
 
