@@ -1,16 +1,28 @@
 
 class Impossible
 
-  attr_reader :marker
+  attr_reader :marker, :opponent
 
-  def initialize(marker)
-    @marker = marker
-  end
+    def initialize(marker)
+        @marker = marker
+        @opponent = get_opponent(@marker)
+    end
+
+    def get_opponent(marker)
+         marker = 'x'
+        if @marker == 'x'
+            opponent = 'o'
+        else
+            opponent = 'x'
+        end  
+        marker
+    end
+
+
 
 
 
 end
-
 
 # class Impossible
 # 	attr_accessor :marker

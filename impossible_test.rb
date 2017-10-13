@@ -1,13 +1,20 @@
 require "minitest/autorun"
 require_relative "impossible.rb"
 
-class TestTicTacToeimpossible < Minitest::Test
+class TestTicTacToeImpossible < Minitest::Test
 
 
 	def test_marker_x
 		impossible = Impossible.new("x")
 		assert_equal("x", impossible.marker)
 	end
+
+	def test_opponent
+		impossible = Impossible.new("x")
+		assert_equal("x", impossible.get_opponent("o"))
+	end	
+
+
 
 	# def test_one
 	# 	impossible_variable = Impossible.new("x")
