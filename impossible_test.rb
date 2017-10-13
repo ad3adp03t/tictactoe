@@ -30,12 +30,22 @@ class TestTicTacToeImpossible < Minitest::Test
     end
 
     def test_take_corner_func
-        impossible = Impossible.new('X')
+        impossible = Impossible.new('x')
         assert_equal(0, impossible.take_corner(["", "", "", "", "", "", "", "", ""]))
     end
 
+    def test_take_corner_func1
+        impossible = Impossible.new('x')
+        assert_equal(2, impossible.take_corner(["x", "", "", "", "", "", "", "", ""]))
+    end
+
+    def test_take_corner_func2
+        impossible = Impossible.new('x')
+        assert_equal(6, impossible.take_corner(["x", "o", "x", "", "", "", "", "", ""]))
+    end
+
     def test_take_corner_get_move
-        impossible = Impossible.new('X')
+        impossible = Impossible.new('x')
         assert_equal(0, impossible.get_move(["", "", "", "", "0", "", "", "", ""]))
     end
 
