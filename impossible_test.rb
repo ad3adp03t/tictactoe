@@ -24,6 +24,13 @@ class TestTicTacToeImpossible < Minitest::Test
         assert_equal(2, impossible.get_move(["x", "x", "", "", "", "", "", "", ""]))
     end
 
+    def test_take_middle
+        impossible = Impossible.new('x')
+        assert_equal(4, impossible.get_move(["", "", "", "", "", "", "", "", ""]))
+    end
+
+
+
 	# def test_one
 	# 	impossible_variable = Impossible.new("x")
 	# 	assert_equal(1, impossible_variable.get_move(["x","","x","","","","","",""]))
