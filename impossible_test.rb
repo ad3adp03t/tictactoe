@@ -11,10 +11,18 @@ class TestTicTacToeImpossible < Minitest::Test
 
 	def test_opponent
 		impossible = Impossible.new("x")
-		assert_equal("x", impossible.get_opponent("o"))
+		assert_equal("o", impossible.opponent)
 	end	
 
+	def test_opponent1
+		impossible = Impossible.new("o")
+		assert_equal("x", impossible.opponent)
+	end	
 
+    def test_win1
+        impossible = Impossible.new("x")
+        assert_equal(2, impossible.get_move(["x", "x", "", "", "", "", "", "", ""]))
+    end
 
 	# def test_one
 	# 	impossible_variable = Impossible.new("x")
