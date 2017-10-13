@@ -66,9 +66,11 @@ class Impossible
         end
         move
     end
+
     def win(ttt_board)
         win_block_move(ttt_board, marker)
     end
+
     def take_center(ttt_board)
         if ttt_board[4] == ''
             move = 4
@@ -76,6 +78,21 @@ class Impossible
             move = 56
         end
     end
+
+    def take_corner(ttt_board)
+        if ttt_board[0] == ''
+            move = 0
+        elsif ttt_board[2] == ''
+            move = 2
+        elsif ttt_board[6] == ''
+            move = 6
+        elsif ttt_board[8] == ''
+            move = 8
+        else 
+            move = 50
+        end
+    end
+
 
 
 

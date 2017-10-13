@@ -29,6 +29,18 @@ class TestTicTacToeImpossible < Minitest::Test
         assert_equal(4, impossible.get_move(["", "", "", "", "", "", "", "", ""]))
     end
 
+    def test_take_corner_func
+        impossible = Impossible.new('X')
+        assert_equal(0, impossible.take_corner(["", "", "", "", "", "", "", "", ""]))
+    end
+
+    def test_take_corner_get_move
+        impossible = Impossible.new('X')
+        assert_equal(0, impossible.get_move(["", "", "", "", "0", "", "", "", ""]))
+    end
+
+
+
 
 
 	# def test_one
